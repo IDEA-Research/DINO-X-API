@@ -10,6 +10,13 @@
 
 </div>
 
+<div align=center>
+
+[![arXiv preprint](https://img.shields.io/badge/arxiv_2405.10300-blue%3Flog%3Darxiv)](https://arxiv.org/abs/2411.14347)   [![Homepage](https://img.shields.io/badge/homepage-visit-blue)](https://deepdataspace.com/home)
+</div>
+
+[![Video Name](./assets/dino_x_video.jpg)](https://github.com/user-attachments/assets/7209d885-7401-4f9e-9ed1-899eb4bd12b1)
+
 ## Highlights
 
 Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-API), DINO-X has several improvements, taking a step forward towards becoming a more general object-centric vision model. The highlights of the DINO-X are as follows:
