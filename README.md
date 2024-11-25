@@ -162,6 +162,18 @@ pip install dds-cloudapi-sdk --upgrade
 python demo.py
 ```
 
+- After running the local demo, you will get the annotated image here: `./annotated_demo_image.jpg`
+
+<details>
+<summary> Demo Image Visualization </summary>
+
+With the text prompt `"wheel . eye . helmet . mouse . mouth . vehicle . steering wheel . ear . nose"`, we will get the predicton results as follows:
+
+<div align="center">
+  <img src="./assets/annotated_demo_image.jpg" width="80%">
+</div>
+
+</details>
 
 ## Related Work
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO): Strong open-set object detection model.
