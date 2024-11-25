@@ -10,10 +10,6 @@
 
 </div>
 
-<div align="center">
-  <img src="./assets/dino_x_teaser.jpg" width="90%">
-</div>
-
 ## DINO-X Highlights
 
 Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-API), DINO-X has several improvements, taking a step forward towards becoming a more general object-centric vision model. The highlights of the DINO-X are as follows:
