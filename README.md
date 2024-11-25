@@ -12,7 +12,7 @@
 
 <div align=center>
 
-[![arXiv preprint](https://img.shields.io/badge/arxiv_2405.10300-blue%3Flog%3Darxiv)](https://arxiv.org/abs/2411.14347)   [![Homepage](https://img.shields.io/badge/homepage-visit-blue)](https://deepdataspace.com/home)
+[![arXiv preprint](https://img.shields.io/badge/arxiv_2411.14347-blue%3Flog%3Darxiv)](https://arxiv.org/abs/2411.14347)   [![Homepage](https://img.shields.io/badge/homepage-visit-blue)](https://deepdataspace.com/home)
 </div>
 
 [![Video Name](./assets/dino_x_video.jpg)](https://github.com/user-attachments/assets/7209d885-7401-4f9e-9ed1-899eb4bd12b1)
