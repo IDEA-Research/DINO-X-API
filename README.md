@@ -187,7 +187,7 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td colspan="6" style="text-align:center;"> <em>Unified Vision Model</em> </td>
   </tr>
   <tr>
-    <td><b>DINO-X Pro</b></td>
+    <td><b>DINO-X Pro</b> <small>(Mask Head)</small></td>
     <td>37.9</td>
     <td>43.8</td>
     <td>46.7</td>
