@@ -155,10 +155,10 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <th>LVIS-val <br><sup><sup>(AP mask rare)</sup></sup></th>
   </tr>
 </thead>
-<tr>
-    <td colspan="6" style="text-align:center;"> <em>Assembled General Perception Model</em> </td>
-</tr>
 <tbody align="center">
+  <tr>
+      <td colspan="6" style="text-align:center;"> <em>Assembled General Perception Model</em> </td>
+  </tr>
   <tr>
     <td>Grounded SAM <small>(1.5 Pro + Huge)</small></td>
     <td>44.3</td>
