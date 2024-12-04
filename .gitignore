@@ -1,3 +1,13 @@
+# DINO-X
+outputs/*
+.vscode/
+.DS_Store
+*-checkpoint.ipynb
+.venv
+*.egg*
+build/*
+_C.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

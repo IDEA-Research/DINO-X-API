@@ -29,6 +29,8 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
+- `2024/12/04`: Release the DINO-X `Open-World Detection and Segmentation` API interface.
+- `2024/12/03`: Support DINO-X with SAM 2 for Open-World Object Segmentation and Tracking. Please check [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) for more details.
 - `2024/11/25`: Release DINO-X API for `Open-World Detection`.
 - `2024/11/22`: Launch DINO-X project and init documentation.
 
