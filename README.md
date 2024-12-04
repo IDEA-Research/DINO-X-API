@@ -45,7 +45,7 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 - [API Usage](#api-usage)
   - [Installation](#installation)
   - [Registration](#register-on-offical-website-to-get-api-token)
-  - [Support Demos](#run-local-api-demo)
+  - [Support Demos](#run-local-api-demos)
     - [Open-World Detection and Segmentation](#open-world-object-detection-and-segmentation)
 - [Related Works](#related-work)
 - [BibTeX](#bibtex)
