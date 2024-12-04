@@ -29,8 +29,8 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
-- `2024/12/04`: Release the DINO-X `Open-World Detection and Segmentation` API interface.
-- `2024/12/03`: Support DINO-X with SAM 2 for Open-World Object Segmentation and Tracking. Please check [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) for more details.
+- `2024/12/04`: Release the DINO-X `Open-World Detection and Segmentation` feature. Please check [here](#open-world-object-detection-and-segmentation) for the API usage.
+- `2024/12/03`: Support DINO-X with SAM 2 for `Open-World Object Segmentation and Tracking`. Please check [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) for more details.
 - `2024/11/25`: Release DINO-X API for `Open-World Detection`.
 - `2024/11/22`: Launch DINO-X project and init documentation.
 
@@ -41,10 +41,12 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 - [Model Performance](#performance)
   - [Side-by-side Performance Comparison with Previous Best Methods](#side-by-side-performance-comparison-with-previous-best-methods)
   - [Zero-Shot Performance on Object Detection Benchmarks](#zero-shot-performance-on-object-detection-benchmarks)
+  - [Zero-Shot Performance on Segmentation Benchmarks](#zero-shot-performance-on-segmentation-benchmarks)
 - [API Usage](#api-usage)
   - [Installation](#installation)
   - [Registration](#register-on-offical-website-to-get-api-token)
-  - [Demo Code](#run-local-api-demo)
+  - [Support Demos](#run-local-api-demo)
+    - [Open-World Detection and Segmentation](#open-world-object-detection-and-segmentation)
 - [Related Works](#related-work)
 - [BibTeX](#bibtex)
 
@@ -138,7 +140,67 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
 </table>
 
 - DINO-X Pro achieves **SOTA** performance on COCO, LVIS-minival, LVIS-val, **zero-shot** object detection benchmarks.
-- DINO-X Pro has significantly improved the model's performance on LVIS-rare classes, significantly surpassing the previous SOTA Grounding DINO 1.6 Pro model by **5.8 AP** and **5.0 AP**, respectively, demonstrating the exceptional capability of DINO-X in long-tailed object detection scenarios.
+- DINO-X Pro has significantly improved the model's performance on LVIS-rare classes, significantly surpassing the previous SOTA Grounding DINO 1.6 Pro model by **5.8 AP** and **5.0 AP**, respectively, demonstrating the exceptional capability of DINO-X in **long-tailed** object detection scenarios.
+
+### Zero-Shot Performance on Segmentation Benchmarks
+
+<table align="center">
+<thead>
+  <tr>
+    <th>Model</th>
+    <th>COCO <br><sup><sup>(AP mask)</sup></sup></th>
+    <th>LVIS-minival <br><sup><sup>(AP mask)</sup></sup></th>
+    <th>LVIS-minival <br><sup><sup>(AP mask rare)</sup></sup></th>
+    <th>LVIS-val <br><sup><sup>(AP mask)</sup></sup></th>
+    <th>LVIS-val <br><sup><sup>(AP mask rare)</sup></sup></th>
+  </tr>
+</thead>
+<tr>
+    <td colspan="6" style="text-align:center;"> <em>Assembled General Perception Model</em> </td>
+</tr>
+<tbody align="center">
+  <tr>
+    <td>Grounded SAM <small>(1.5 Pro + Huge)</small></td>
+    <td>44.3</td>
+    <td>47.7</td>
+    <td>50.2</td>
+    <td>41.8</td>
+    <td>46.0</td>
+  </tr>
+  <tr>
+    <td>Grounded SAM 2 <small>(1.5 Pro + Large)</small></td>
+    <td> <b> 44.7 </b> </td>
+    <td>46.2</td>
+    <td>50.1</td>
+    <td>40.5</td>
+    <td>44.6</td>
+  </tr>
+  <tr>
+    <td> <b>DINO-X Pro + SAM-Huge</b> </td>
+    <td>44.2</td>
+    <td><b>51.2</b></td>
+    <td><b>52.2</b></td>
+    <td> - </td>
+    <td> - </td>
+  </tr>
+  <tr>
+    <td colspan="6" style="text-align:center;"> <em>Unified Vision Model</em> </td>
+  </tr>
+  <tr>
+    <td><b>DINO-X Pro</b></td>
+    <td>37.9</td>
+    <td>43.8</td>
+    <td>46.7</td>
+    <td>38.5</td>
+    <td>44.4</td>
+  </tr>
+</tbody>
+</table>
+
+- **Performance**: DINO-X achieves mask AP scores of 37.9, 43.8, and 38.5 on the COCO, LVIS-minival, and LVIS-val **zero-shot** instance segmentation benchmarks, respectively.Compared to [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) and [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2), there is still a notable performance gap for DINO-X to catch up. We will further optimize the segmentation performance in the future release.
+- **Effeciency**: Unlike Grounded SAM series, DINO-X significantly improves the segmentation efficiency by generating corresponding masks for each region without requiring multiple complex inference steps.
+- **Practical Usage**: Users can use the mask function of DINO-X based on their actual needs. If the users require simultaneously object segmentation and tracking, we recommend using the latest Grounded SAM 2 (DINO-X + SAM 2), which we have already implemented in [here](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-video-object-tracking-demo-with-custom-video-input-with-dino-x).
+
 
 
 ## API Usage
@@ -163,7 +225,9 @@ pip install dds-cloudapi-sdk --upgrade
 
 - **Request Additional Token Quotas**: If you find our project helpful and need more API token quotas, you can request additional tokens by [filling out this form](https://docs.google.com/forms/d/e/1FAIpQLSfjogAtkgoVyFX9wvCAE15mD7QtHdKdKOrVmcE5GT1xu-03Aw/viewform?usp=sf_link). Our team will review your request and allocate more tokens for your use in one or two days. You can also apply for more tokens by sending us an email.
 
-### Run local API demo
+### Run local API demos
+
+#### Open-World Object Detection and Segmentation
 
 - Set your API token in [demo.py](./demo.py) and run local demo
 
@@ -171,7 +235,7 @@ pip install dds-cloudapi-sdk --upgrade
 python demo.py
 ```
 
-- After running the local demo, you will get the annotated image here: `./annotated_demo_image.jpg`
+- After running the local demo, the annotated image will be saved at: `./outputs/open_world_detection`
 
 <details>
 <summary> Demo Image Visualization </summary>
@@ -179,7 +243,11 @@ python demo.py
 With the text prompt `"wheel . eye . helmet . mouse . mouth . vehicle . steering wheel . ear . nose"`, we will get the predicton results as follows:
 
 <div align="center">
-  <img src="./assets/annotated_demo_image.jpg" width="80%">
+
+| Demo Image | Box Prediction | Mask Prediction |
+|:----:|:----:|:----:|
+| ![](./assets/demo.png) | ![](./assets/annotated_demo_image.jpg) | ![](./assets/annotated_demo_image_with_mask.jpg) |
+
 </div>
 
 </details>
