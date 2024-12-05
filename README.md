@@ -133,7 +133,7 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td><b>56.0</b></td>
     <td><b>59.7</b></td>
     <td><b>63.3</b></td>
-    <td><b>52.5</b></td>
+    <td><b>52.4</b></td>
     <td><b>56.5</b></td>
   </tr>
 </tbody>
