@@ -29,10 +29,9 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
-- `2024/12/04`: Release the DINO-X `Open-World Detection and Segmentation` feature. Please check [here](#open-world-object-detection-and-segmentation) for the API usage.
-- `2024/12/03`: Support DINO-X with SAM 2 for `Open-World Object Segmentation and Tracking`. Please check [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) for more details.
-- `2024/11/25`: Release DINO-X API for `Open-World Detection`.
-- `2024/11/22`: Launch DINO-X project and init documentation.
+- **2024/12/05**: Released the **Prompt-Free Anything Detection and Segmentation** feature. For API usage and demo visualization, please refer to [here](#prompt-free-anything-detection-and-segmentation). To use the latest features, please install `dds-cloudapi-sdk==0.3.3`.
+- **2024/12/04**: Launched the **Open-World Detection and Segmentation** feature. For API usage and demo visualization, visit [here](#open-world-object-detection-and-segmentation).
+- **2024/12/03**: Added support for **DINO-X with SAM 2** in **Open-World Anything Segmentation and Tracking**. For more details, check out the [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) project.
 
 
 ## Contents
@@ -47,6 +46,7 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
   - [Registration](#register-on-offical-website-to-get-api-token)
   - [Support Demos](#run-local-api-demos)
     - [Open-World Detection and Segmentation](#open-world-object-detection-and-segmentation)
+    - [Prompt-Free Anything Detection and Segmentation](#prompt-free-anything-detection-and-segmentation)
 - [Related Works](#related-work)
 - [BibTeX](#bibtex)
 
@@ -229,13 +229,13 @@ pip install dds-cloudapi-sdk --upgrade
 
 #### Open-World Object Detection and Segmentation
 
-- Set your API token in [demo.py](./demo.py) and run local demo
+Open-world detection means users can detect anything with text prompts, try this feature by setting your API token in [demo.py](./demo.py) and run local demo:
 
 ```bash
 python demo.py
 ```
 
-- After running the local demo, the annotated image will be saved at: `./outputs/open_world_detection`
+After running the local demo, the annotated image will be saved at: `./outputs/open_world_detection`
 
 <details>
 <summary> Demo Image Visualization </summary>
@@ -247,6 +247,31 @@ With the text prompt `"wheel . eye . helmet . mouse . mouth . vehicle . steering
 | Demo Image | Box Prediction | Mask Prediction |
 |:----:|:----:|:----:|
 | ![](./assets/demo.png) | ![](./assets/annotated_demo_image.jpg) | ![](./assets/annotated_demo_image_with_mask.jpg) |
+
+</div>
+
+</details>
+
+#### Prompt-Free Anything Detection and Segmentation
+
+We've implemented a novel _Prompt Free_ object detection feature, which means users do not need to provide any prompt and DINO-X will **automatically recognize, detect and segment the objects** in the provided images. You can try this feature with the following script after setting your API token:
+
+```bash
+python prompt_free_demo.py
+```
+
+After running the local demo, the annotated image will be saved at: `./outputs/prompt_free_detection_segmentation`
+
+<details>
+<summary> Demo Image Visualization </summary>
+
+With the specific text prompt `"<prompt_free>"`, we will get the predicton results as follows:
+
+<div align="center">
+
+| Demo Image | Box Prediction | Mask Prediction |
+|:----:|:----:|:----:|
+| ![](./assets/demo2.jpg) | ![](./assets/prompt_free_annotated_demo_image.jpg) | ![](./assets/prompt_free_annotated_demo_image_with_mask.jpg) |
 
 </div>
 

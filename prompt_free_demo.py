@@ -17,9 +17,9 @@ from pathlib import Path
 Hyper Parameters
 """
 API_TOKEN = "Your API Token"
-IMG_PATH = "./assets/demo.png"
-TEXT_PROMPT = "wheel . eye . helmet . mouse . mouth . vehicle . steering wheel . ear . nose"
-OUTPUT_DIR = Path("./outputs/open_world_detection")
+IMG_PATH = "demo2.jpg"
+TEXT_PROMPT = "<prompt_free>"
+OUTPUT_DIR = Path("./outputs/prompt_free_detection_segmentation")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -50,10 +50,9 @@ predictions = task.result.objects
 """
 Visualization
 """
-
 # decode the prediction results
-
-classes = [x.strip().lower() for x in TEXT_PROMPT.split('.') if x]
+classes = [pred.category for pred in predictions]
+classes = list(set(classes))
 class_name_to_id = {name: id for id, name in enumerate(classes)}
 class_id_to_name = {id: name for name, id in class_name_to_id.items()}
 
