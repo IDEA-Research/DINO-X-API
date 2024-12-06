@@ -4,7 +4,7 @@
 
   **The World's Top-Performing Vision Model for Open-World Object Detection** 
 
-  The project provides **examples** for using **DINO-X**, which are hosted on [DeepDataSpace](https://deepdataspace.com/home).
+  The project provides **examples** for using **DINO-X**, which is hosted on [DeepDataSpace](https://deepdataspace.com/home).
 
   **[IDEA Research](https://github.com/IDEA-Research)** 
 
