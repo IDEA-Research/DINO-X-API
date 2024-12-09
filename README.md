@@ -29,9 +29,11 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
-- **2024/12/05**: Released the **Prompt-Free Anything Detection and Segmentation** feature. For API usage and demo visualization, please refer to [here](#prompt-free-anything-detection-and-segmentation). To use the latest features, please install `dds-cloudapi-sdk==0.3.3`.
-- **2024/12/04**: Launched the **Open-World Detection and Segmentation** feature. For API usage and demo visualization, visit [here](#open-world-object-detection-and-segmentation).
-- **2024/12/03**: Added support for **DINO-X with SAM 2** in **Open-World Anything Segmentation and Tracking**. For more details, check out the [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) project.
+- **2024.12.05**: Released the **Prompt-Free Anything Detection and Segmentation** feature. For API usage and demo visualization, please refer to [here](#prompt-free-anything-detection-and-segmentation). To use the latest features, please install `dds-cloudapi-sdk==0.3.3`.
+
+- **2024.12.04**: Launched the **Open-World Detection and Segmentation** feature. For API usage and demo visualization, visit [here](#open-world-object-detection-and-segmentation).
+
+- **2024.12.03**: Support **DINO-X with SAM 2** for **Open-World Anything Segmentation and Tracking**. For more details, check out the [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-image-demo-with-dino-x) project.
 
 
 ## Contents
