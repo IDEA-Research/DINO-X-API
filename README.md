@@ -29,6 +29,8 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
+- **2024.01.18**: DINO-X achieves SOTA performance of 51.7 average mask AP score on [Segmentation in the Wild](https://eval.ai/web/challenges/challenge-page/1931/overview) zero-shot track.
+
 - **2024.12.05**: Released the **Prompt-Free Anything Detection and Segmentation** feature. For API usage and demo visualization, please refer to [here](#prompt-free-anything-detection-and-segmentation). To use the latest features, please install `dds-cloudapi-sdk==0.3.3`.
 
 - **2024.12.04**: Launched the **Open-World Detection and Segmentation** feature. For API usage and demo visualization, visit [here](#open-world-object-detection-and-segmentation).
@@ -42,7 +44,7 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 - [Model Performance](#performance)
   - [Side-by-side Performance Comparison with Previous Best Methods](#side-by-side-performance-comparison-with-previous-best-methods)
   - [Zero-Shot Performance on Object Detection Benchmarks](#zero-shot-performance-on-object-detection-benchmarks)
-  - [Zero-Shot Performance on Segmentation Benchmarks](#zero-shot-performance-on-segmentation-benchmarks)
+  - [Zero-Shot Performance on Generic Segmentation Benchmarks](#zero-shot-performance-on-generic-segmentation-benchmarks)
 - [API Usage](#api-usage)
   - [Installation](#installation)
   - [Registration](#register-on-offical-website-to-get-api-token)
@@ -144,7 +146,7 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
 - **Performance**: DINO-X Pro achieves **SOTA** performance on COCO, LVIS-minival, LVIS-val, **zero-shot** object detection benchmarks.
 - **Effective Long-tail Object Detection**: DINO-X Pro has significantly improved the model's performance on LVIS-rare classes, significantly surpassing the previous SOTA Grounding DINO 1.6 Pro model by **5.8 AP** and **5.0 AP**, respectively, demonstrating the exceptional capability of DINO-X in **long-tailed** object detection scenarios.
 
-### Zero-Shot Performance on Segmentation Benchmarks
+### Zero-Shot Performance on Generic Segmentation Benchmarks
 
 <table align="center">
 <thead>
@@ -155,11 +157,21 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <th>LVIS-minival <br><sup><sup>(AP mask rare)</sup></sup></th>
     <th>LVIS-val <br><sup><sup>(AP mask)</sup></sup></th>
     <th>LVIS-val <br><sup><sup>(AP mask rare)</sup></sup></th>
+    <th>SGinW <br><sup><sup>(AP mask avg)</sup></sup></th>
   </tr>
 </thead>
 <tbody align="center">
   <tr>
-      <td colspan="6" style="text-align:center;"> <em>Assembled General Perception Model</em> </td>
+      <td colspan="7" style="text-align:center;"> <em>Assembled General Perception Model</em> </td>
+  </tr>
+  <tr>
+    <td>Grounded HQ-SAM <small>(Base + Huge)</small></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>49.6</td>
   </tr>
   <tr>
     <td>Grounded SAM <small>(1.5 Pro + Huge)</small></td>
@@ -168,6 +180,7 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td>50.2</td>
     <td>41.8</td>
     <td>46.0</td>
+    <td> - </td>
   </tr>
   <tr>
     <td>Grounded SAM 2 <small>(1.5 Pro + Large)</small></td>
@@ -176,6 +189,7 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td>50.1</td>
     <td>40.5</td>
     <td>44.6</td>
+    <td> - </td>
   </tr>
   <tr>
     <td> <b>DINO-X Pro + SAM-Huge</b> </td>
@@ -184,9 +198,10 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td><b>52.2</b></td>
     <td> - </td>
     <td> - </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td colspan="6" style="text-align:center;"> <em>Unified Vision Model</em> </td>
+    <td colspan="7" style="text-align:center;"> <em>Unified Vision Model</em> </td>
   </tr>
   <tr>
     <td><b>DINO-X Pro</b> <small>(Mask Head)</small></td>
@@ -195,11 +210,12 @@ DINO-X can accept `text prompts`, `visual prompts`, and `customized prompts` as 
     <td>46.7</td>
     <td>38.5</td>
     <td>44.4</td>
+    <td><b>51.7</b></td>
   </tr>
 </tbody>
 </table>
 
-- **Performance**: DINO-X achieves mask AP scores of 37.9, 43.8, and 38.5 on the COCO, LVIS-minival, and LVIS-val **zero-shot** instance segmentation benchmarks, respectively.Compared to [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) and [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2), there is still a notable performance gap for DINO-X to catch up. We will further optimize the segmentation performance in the future release.
+- **Performance**: DINO-X achieves SOTA performance of 51.7 average mask AP on [SGinW zero-shot benchmarks](https://eval.ai/web/challenges/challenge-page/1931/overview). And DINO-X also achieves mask AP scores of 37.9, 43.8, and 38.5 on the COCO, LVIS-minival, and LVIS-val **zero-shot** instance segmentation benchmarks, respectively.Compared to [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) and [Grounded SAM 2](https://github.com/IDEA-Research/Grounded-SAM-2), there is still a notable performance gap for DINO-X to catch up. We will further optimize the segmentation performance in the future release.
 - **Efficiency**: Unlike Grounded SAM series, DINO-X significantly improves the segmentation efficiency by generating corresponding masks for each region without requiring multiple complex inference steps.
 - **Practical Usage**: Users can use the mask function of DINO-X based on their actual needs. If the users require simultaneously object segmentation and tracking, we recommend using the latest Grounded SAM 2 (DINO-X + SAM 2), which we have already implemented in [here](https://github.com/IDEA-Research/Grounded-SAM-2?tab=readme-ov-file#grounded-sam-2-video-object-tracking-demo-with-custom-video-input-with-dino-x).
 
