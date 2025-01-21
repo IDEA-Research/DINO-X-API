@@ -241,7 +241,9 @@ pip install dds-cloudapi-sdk --upgrade
 
 - **First-Time Application**: If you are interested in our project and wish to try our algorithm, you will need to apply for the corresponding API Token through our [request API token website](https://cloud.deepdataspace.com/apply-token?from=github) for your first attempt.
 
-- **Request Additional Token Quotas**: If you find our project helpful and need more API token quotas, you can request additional tokens by [filling out this form](https://docs.google.com/forms/d/e/1FAIpQLSfjogAtkgoVyFX9wvCAE15mD7QtHdKdKOrVmcE5GT1xu-03Aw/viewform?usp=sf_link). Our team will review your request and allocate more tokens for your use in one or two days. You can also apply for more tokens by sending us an email.
+<!-- - **Request Additional Token Quotas**: If you find our project helpful and need more API token quotas, you can request additional tokens by [filling out this form](https://docs.google.com/forms/d/e/1FAIpQLSfjogAtkgoVyFX9wvCAE15mD7QtHdKdKOrVmcE5GT1xu-03Aw/viewform?usp=sf_link). Our team will review your request and allocate more tokens for your use in one or two days. You can also apply for more tokens by sending us an email. -->
+
+- **Request Additional Token Quotas**: At this stage, we now support **WeChat Pay** as a payment channel. Users can purchase additional API calls through our [official platform](https://cloud.deepdataspace.com/dashboard/usage). If you encounter any issues during the purchase process or have other collaboration needs, feel free to contact us via this email address: **deepdataspace_dm@idea.edu.cn**.
 
 ### Run local API demos
 
