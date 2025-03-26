@@ -29,7 +29,9 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
-- **2024.01.18**: DINO-X achieves SOTA performance of 51.7 average mask AP score on [Segmentation in the Wild](https://eval.ai/web/challenges/challenge-page/1931/overview) zero-shot track.
+- **2025.03.11**: We have released [DINO-XSeeK](https://deepdataspace.com/blog/dino-xseek) model towards detecting objects based on more complex user descriptions. Please refer to [RexSeeK](https://github.com/IDEA-Research/RexSeek) for more details and the demo has already been available at [here](https://cloud.deepdataspace.com/playground/dino-x).
+
+- **2025.01.18**: DINO-X achieves SOTA performance of 51.7 average mask AP score on [Segmentation in the Wild](https://eval.ai/web/challenges/challenge-page/1931/overview) zero-shot track.
 
 - **2024.12.05**: Released the **Prompt-Free Anything Detection and Segmentation** feature. For API usage and demo visualization, please refer to [here](#prompt-free-anything-detection-and-segmentation). To use the latest features, please install `dds-cloudapi-sdk==0.3.3`.
 
