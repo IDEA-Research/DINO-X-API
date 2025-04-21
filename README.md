@@ -29,6 +29,8 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
+- **2025.04.21**: Update to `dds-cloudapi-sdk` API V2 version. The V1 version in the original API for `DINO-X` has been deprecated, please update to the latest `dds-cloudapi-sdk` by `pip install dds-cloudapi-sdk -U` to use `DINO-X` model. Please refer to [dds-cloudapi-sdk](https://github.com/deepdataspace/dds-cloudapi-sdk) and our [API docs](https://cloud.deepdataspace.com/docs) to view more details about the update.
+
 - **2025.03.11**: We have released [DINO-XSeeK](https://deepdataspace.com/blog/dino-xseek) model towards detecting objects based on more complex user descriptions. Please refer to [RexSeeK](https://github.com/IDEA-Research/RexSeek) for more details and the demo has already been available at [here](https://cloud.deepdataspace.com/playground/dino-x).
 
 - **2025.01.18**: DINO-X achieves SOTA performance of 51.7 average mask AP score on [Segmentation in the Wild](https://eval.ai/web/challenges/challenge-page/1931/overview) zero-shot track.

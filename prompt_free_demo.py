@@ -1,10 +1,7 @@
 # dds cloudapi for DINO-X
 from dds_cloudapi_sdk import Config
 from dds_cloudapi_sdk import Client
-from dds_cloudapi_sdk.tasks.dinox import DinoxTask
-from dds_cloudapi_sdk.tasks.detection import DetectionTask
-from dds_cloudapi_sdk.tasks.types import DetectionTarget
-from dds_cloudapi_sdk import TextPrompt
+from dds_cloudapi_sdk.tasks.v2_task import V2Task
 
 # using supervision for visualization
 import os
@@ -12,13 +9,14 @@ import cv2
 import numpy as np
 import supervision as sv
 from pathlib import Path
+from rle_util import rle_to_array
 
 """
 Hyper Parameters
 """
 API_TOKEN = "Your API Token"
-IMG_PATH = "demo2.jpg"
-TEXT_PROMPT = "<prompt_free>"
+IMG_PATH = "assets/demo2.jpg"
+# TEXT_PROMPT = "<prompt_free>"  # Prompt-Free does not need text prompt
 OUTPUT_DIR = Path("./outputs/prompt_free_detection_segmentation")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -34,24 +32,35 @@ config = Config(token)
 # Step 2: initialize the client
 client = Client(config)
 
-# Step 3: Run DINO-X task
+# Step 3: Run V2 task
 # if you are processing local image file, upload them to DDS server to get the image url
 image_url = client.upload_file(IMG_PATH)
 
-task = DinoxTask(
-    image_url=image_url,
-    prompts=[TextPrompt(text=TEXT_PROMPT)],
-    bbox_threshold=0.25,
-    targets=[DetectionTarget.BBox, DetectionTarget.Mask]
+v2_task = V2Task(
+    api_path="/v2/task/dinox/detection",
+    api_body={
+        "model": "DINO-X-1.0",
+        "image": image_url,
+        "prompt": {
+            "type": "universal",
+            # "text": TEXT_PROMPT
+        },
+        "targets": ["bbox", "mask"],
+        "bbox_threshold": 0.25,
+        "iou_threshold": 0.8
+    }
 )
-client.run_task(task)
-predictions = task.result.objects
+
+client.run_task(v2_task)
+result = v2_task.result
+
+objects = result["objects"]
 
 """
 Visualization
 """
 # decode the prediction results
-classes = [pred.category for pred in predictions]
+classes = [obj["category"] for obj in objects]
 classes = list(set(classes))
 class_name_to_id = {name: id for id, name in enumerate(classes)}
 class_id_to_name = {id: name for name, id in class_name_to_id.items()}
@@ -62,11 +71,11 @@ confidences = []
 class_names = []
 class_ids = []
 
-for idx, obj in enumerate(predictions):
-    boxes.append(obj.bbox)
-    masks.append(DetectionTask.rle2mask(DetectionTask.string2rle(obj.mask.counts), obj.mask.size))  # convert mask to np.array using DDS API
-    confidences.append(obj.score)
-    cls_name = obj.category.lower().strip()
+for idx, obj in enumerate(objects):
+    boxes.append(obj["bbox"])
+    masks.append(rle_to_array(obj["mask"]["counts"], obj["mask"]["size"][0] * obj["mask"]["size"][1]).reshape(obj["mask"]["size"]))
+    confidences.append(obj["score"])
+    cls_name = obj["category"].lower().strip()
     class_names.append(cls_name)
     class_ids.append(class_name_to_id[cls_name])
 
