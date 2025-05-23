@@ -2,7 +2,7 @@
 from dds_cloudapi_sdk import Config
 from dds_cloudapi_sdk import Client
 from dds_cloudapi_sdk.image_resizer import image_to_base64
-from dds_cloudapi_sdk.tasks.v2_task import V2Task, create_task_with_local_image_auto_resize
+from dds_cloudapi_sdk.tasks.v2_task import V2Task
 
 # using supervision for visualization
 import os
