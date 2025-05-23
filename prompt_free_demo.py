@@ -1,6 +1,7 @@
 # dds cloudapi for DINO-X
 from dds_cloudapi_sdk import Config
 from dds_cloudapi_sdk import Client
+from dds_cloudapi_sdk.image_resizer import image_to_base64
 from dds_cloudapi_sdk.tasks.v2_task import V2Task
 
 # using supervision for visualization
@@ -33,26 +34,29 @@ config = Config(token)
 client = Client(config)
 
 # Step 3: Run V2 task
-# if you are processing local image file, upload them to DDS server to get the image url
-image_url = client.upload_file(IMG_PATH)
+# if you are processing local image file, convert it to base64
+image = image_to_base64(IMG_PATH)
 
-v2_task = V2Task(
-    api_path="/v2/task/dinox/detection",
-    api_body={
-        "model": "DINO-X-1.0",
-        "image": image_url,
-        "prompt": {
-            "type": "universal",
-            # "text": TEXT_PROMPT
-        },
-        "targets": ["bbox", "mask"],
-        "bbox_threshold": 0.25,
-        "iou_threshold": 0.8
-    }
+api_path="/v2/task/dinox/detection"
+api_body={
+    "model": "DINO-X-1.0",
+    "image": image,
+    "prompt": {
+        "type": "universal",
+        # "text": TEXT_PROMPT
+    },
+    "targets": ["bbox", "mask"],
+    "bbox_threshold": 0.25,
+    "iou_threshold": 0.8
+}
+
+task = V2Task(
+    api_path=api_path,
+    api_body=api_body
 )
 
-client.run_task(v2_task)
-result = v2_task.result
+client.run_task(task)
+result = task.result
 
 objects = result["objects"]
 
