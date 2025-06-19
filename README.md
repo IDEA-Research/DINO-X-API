@@ -27,8 +27,12 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 🍉 **Rich and Practical Capabilities**: DINO-X can simultaneously support lots of highly practical tasks, including Open-Set Object Detection and Segmentation, Phrase Grounding, Visual-Prompt Counting, Pose Estimation, and Region Captioning. We further develop a universal object prompt to achieve *Prompt-Free* Anything Detection and Recognition.
 
+🔌 **Seamless AI Tool Integration**: With [DINO-X MCP Server](https://github.com/IDEA-Research/DINO-X-MCP), developers can integrate DINO-X's capabilities directly into Cursor, Claude, and other MCP-compatible AI tools, enabling object detection in conversational AI workflows.
 
 ## Latest News
+
+- **2025.06.18**: 🚀 **DINO-X MCP Server** is now available! Integrate DINO-X into Cursor and other MCP-compatible tools. Check [dinox-mcp](https://github.com/IDEA-Research/DINO-X-MCP) for details.
+
 - **2025.05.21**: For more demo usages, including `DINO-X`, `T-Rex`, `DINO-X-SeeK`, please check [dds-cloud-api examples](https://github.com/deepdataspace/dds-cloudapi-sdk/blob/main/examples.py) for more details.
 
 - **2025.04.21**: Update to `dds-cloudapi-sdk` API V2 version. The V1 version in the original API for `DINO-X` has been deprecated, please update to the latest `dds-cloudapi-sdk` by `pip install dds-cloudapi-sdk -U` to use `DINO-X` model. Please refer to [dds-cloudapi-sdk](https://github.com/deepdataspace/dds-cloudapi-sdk) and our [API docs](https://cloud.deepdataspace.com/docs) to view more details about the update.
