@@ -11,7 +11,6 @@ import numpy as np
 import supervision as sv
 from pathlib import Path
 from pycocotools import mask as mask_utils
-from rle_util import rle_to_array
 
 """
 Hyper Parameters
@@ -46,6 +45,7 @@ api_body={
         "type": "text",
         "text": TEXT_PROMPT
     },
+    "mask_format": "coco_rle",
     "targets": ["bbox", "mask"],
     "bbox_threshold": 0.25,
     "iou_threshold": 0.8
@@ -79,7 +79,7 @@ class_ids = []
 
 for idx, obj in enumerate(objects):
     boxes.append(obj["bbox"])
-    masks.append(rle_to_array(obj["mask"]["counts"], obj["mask"]["size"][0] * obj["mask"]["size"][1]).reshape(obj["mask"]["size"]))
+    masks.append(mask_utils.decode(obj["mask"]))
     confidences.append(obj["score"])
     cls_name = obj["category"].lower().strip()
     class_names.append(cls_name)
