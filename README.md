@@ -27,9 +27,12 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 🍉 **Rich and Practical Capabilities**: DINO-X can simultaneously support lots of highly practical tasks, including Open-Set Object Detection and Segmentation, Phrase Grounding, Visual-Prompt Counting, Pose Estimation, and Region Captioning. We further develop a universal object prompt to achieve *Prompt-Free* Anything Detection and Recognition.
 
+🔌 **Seamless AI Tool Integration**: With [DINO-X MCP Server](https://github.com/IDEA-Research/DINO-X-MCP), developers can integrate DINO-X's capabilities directly into Cursor, Claude, and other MCP-compatible AI tools, enabling object detection in conversational AI workflows.
 
 ## Latest News
 - **2025.07.23**: We've updated `dds-cloudapi-sdk` to version `0.5.3`, which significantly improves mask encoding by removing the previous non-standard method and adopting the `pycocotools-aligned rle mask format`. This change makes it much easier to decode masks directly with pycocotools, and we've added a new `mask_format = coco_rle` parameter to the API; you can find detailed usage examples here: [dds visualization utils](https://github.com/deepdataspace/dds-cloudapi-sdk/blob/8b49bc882dc8f112ffe785afbf20c610ce5112d2/dds_cloudapi_sdk/visualization_util.py)
+
+- **2025.06.18**: 🚀 **DINO-X MCP Server** is now available! Integrate DINO-X into Cursor and other MCP-compatible tools. Check [dinox-mcp](https://github.com/IDEA-Research/DINO-X-MCP) for details.
 
 - **2025.05.21**: For more demo usages, including `DINO-X`, `T-Rex`, `DINO-X-SeeK`, please check [dds-cloud-api examples](https://github.com/deepdataspace/dds-cloudapi-sdk/blob/main/examples.py) for more details.
 
