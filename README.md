@@ -29,6 +29,8 @@ Beyond [Grounding DINO 1.5](https://github.com/IDEA-Research/Grounding-DINO-1.5-
 
 
 ## Latest News
+- **2025.07.23**: We've updated `dds-cloudapi-sdk` to version `0.5.3`, which significantly improves mask encoding by removing the previous non-standard method and adopting the `pycocotools-aligned rle mask format`. This change makes it much easier to decode masks directly with pycocotools, and we've added a new `mask_format = coco_rle` parameter to the API; you can find detailed usage examples here: [dds visualization utils](https://github.com/deepdataspace/dds-cloudapi-sdk/blob/8b49bc882dc8f112ffe785afbf20c610ce5112d2/dds_cloudapi_sdk/visualization_util.py)
+
 - **2025.05.21**: For more demo usages, including `DINO-X`, `T-Rex`, `DINO-X-SeeK`, please check [dds-cloud-api examples](https://github.com/deepdataspace/dds-cloudapi-sdk/blob/main/examples.py) for more details.
 
 - **2025.04.21**: Update to `dds-cloudapi-sdk` API V2 version. The V1 version in the original API for `DINO-X` has been deprecated, please update to the latest `dds-cloudapi-sdk` by `pip install dds-cloudapi-sdk -U` to use `DINO-X` model. Please refer to [dds-cloudapi-sdk](https://github.com/deepdataspace/dds-cloudapi-sdk) and our [API docs](https://cloud.deepdataspace.com/docs) to view more details about the update.
